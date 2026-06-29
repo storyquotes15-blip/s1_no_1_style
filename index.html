@@ -221,11 +221,46 @@ async function searchCode(raw){
     const data = await res.json();
     skeleton.classList.add('hidden');
 
-    if(!data.success){
-      statusBox.textContent = data.message || 'Code tidak ditemukan.';
-      statusBox.classList.remove('hidden');
-      return;
-    }
+if(!data.success){
+  const playCode = code.includes("-")
+    ? code
+    : code.replace(/^([A-Z]+)(\d+)$/, "$1-$2");
+
+  const watchUrl = `https://upload18.org/play/index/${playCode}`;
+  const uncensoredUrl = `https://upload18.org/play/index/${playCode}-uncensored-leak`;
+
+  skeleton.classList.add('hidden');
+  statusBox.classList.add('hidden');
+
+  detail.innerHTML = `
+    <div class="detail-card">
+      <div class="meta">
+        <span class="site">CODE TIDAK ADA</span>
+        <h2>Gambar belum tersedia</h2>
+
+        <p class="muted">
+          CODE: <b>${escapeHtml(playCode)}</b><br>
+          Tapi Anda tetap bisa coba tombol nonton di bawah.
+        </p>
+
+        <div class="watch-row">
+          <a class="action" target="_blank" rel="nofollow" href="${watchUrl}">
+            🎬 TONTON SEKARANG
+          </a>
+
+          <a class="action black" target="_blank" rel="nofollow" href="${uncensoredUrl}">
+            🔥 UNCENSORED
+          </a>
+        </div>
+      </div>
+    </div>
+
+    ${renderAds()}
+  `;
+
+  detail.classList.remove('hidden');
+  return;
+}
     renderDetail(data);
   }catch(e){
     console.error(e);
