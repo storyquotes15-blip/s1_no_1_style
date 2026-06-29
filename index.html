@@ -117,30 +117,52 @@
     padding:6px 10px;
     font-size:12px;
 }
-/* semua CSS yang sudah ada */
-
-/* HERO BUTTONS */
+/* ===========================
+   HERO BUTTONS
+=========================== */
 
 .hero-buttons{
     display:flex;
     gap:12px;
-    margin-top:16px;
+    margin-top:18px;
     max-width:680px;
-    flex-wrap:wrap;
 }
 
 .hero-action{
     flex:1;
-    min-height:50px;
+    height:52px;
     display:flex;
     align-items:center;
     justify-content:center;
-    text-align:center;
+
+    border-radius:14px;
+    background:linear-gradient(135deg,#df3622,#a51d13);
+    color:#fff;
+
     font-size:15px;
     font-weight:900;
+    letter-spacing:.3px;
+
+    box-shadow:0 10px 25px rgba(223,54,34,.25);
+    transition:.25s;
 }
 
-@media(max-width:560px){
+.hero-action:hover{
+    transform:translateY(-2px);
+    filter:brightness(1.08);
+}
+
+.hero-action:active{
+    transform:scale(.98);
+}
+
+.hero-action svg{
+    width:18px;
+    height:18px;
+    margin-right:8px;
+}
+
+@media(max-width:680px){
 
 .hero-buttons{
     flex-direction:column;
@@ -169,25 +191,24 @@
           <h1>CODE FILM NO 1</h1>
           <p>Masukkan kode film Japanese. Bisa pakai format <b>SNOS227</b>, <b>SNOS-227</b>, atau <b>SNOS 227</b>. Hasil akan dicari otomatis di beberapa studio.</p>
           <div class="searchbox">
-            <div class="hero-buttons">
+            <input id="codeInput" type="search" placeholder="Contoh: SNOS-227">
+            <button id="searchBtn">CARI</button>
+          </div>
+          <div class="hero-buttons">
 
     <a href="https://t.me/jpnvids1no1stylegruop"
        target="_blank"
-       class="hero-btn telegram">
+       class="action hero-action">
         💬 TELEGRAM GRUOP
     </a>
 
     <a href="https://t.me/+oGTEwVJ5NRU5ZDc1"
        target="_blank"
-       class="hero-btn code">
+       class="action hero-action">
         🎁 DAPATKAN CODE
     </a>
-    
 
 </div>
-            <input id="codeInput" type="search" placeholder="Contoh: SNOS-227">
-            <button id="searchBtn">CARI</button>
-          </div>
           <div class="lang-mobile"><select id="langSelectMobile" class="lang-select"><option value="id">Indonesia</option><option value="jp">Jepang Asli</option></select></div><div class="chips">
             <button class="chip" data-code="SNOS-227">SNOS-227</button>
             <button class="chip" data-code="MIAA-001">MIAA-001</button>
