@@ -117,6 +117,40 @@
     padding:6px 10px;
     font-size:12px;
 }
+/* semua CSS yang sudah ada */
+
+/* HERO BUTTONS */
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:16px;
+    max-width:680px;
+    flex-wrap:wrap;
+}
+
+.hero-action{
+    flex:1;
+    min-height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-size:15px;
+    font-weight:900;
+}
+
+@media(max-width:560px){
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.hero-action{
+    width:100%;
+}
+
+}
   </style>
 </head>
 <body>
@@ -135,6 +169,22 @@
           <h1>CODE FILM NO 1</h1>
           <p>Masukkan kode film Japanese. Bisa pakai format <b>SNOS227</b>, <b>SNOS-227</b>, atau <b>SNOS 227</b>. Hasil akan dicari otomatis di beberapa studio.</p>
           <div class="searchbox">
+            <div class="hero-buttons">
+
+    <a href="https://t.me/jpnvids1no1stylegruop"
+       target="_blank"
+       class="hero-btn telegram">
+        💬 TELEGRAM GRUOP
+    </a>
+
+    <a href="https://t.me/+oGTEwVJ5NRU5ZDc1"
+       target="_blank"
+       class="hero-btn code">
+        🎁 DAPATKAN CODE
+    </a>
+    
+
+</div>
             <input id="codeInput" type="search" placeholder="Contoh: SNOS-227">
             <button id="searchBtn">CARI</button>
           </div>
